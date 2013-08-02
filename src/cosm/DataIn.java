@@ -57,7 +57,7 @@ public class DataIn {
 		apiKey = key;
 		feedId = id;
 		myParent = theParent;
-		System.out.println("##library.name## ##library.prettyVersion## http://cosm.com");
+		System.out.println("##library.name## ##library.prettyVersion## http://xively.com");
 		System.out.println("##author## 2012");
 		System.out.println("-----------------------------\n\n");
 	}
@@ -68,7 +68,7 @@ public class DataIn {
 	}
 
 	public void connect() {
-		String host = "http://api.cosm.com";
+		String host = "http://api.xively.com";
 		String operation = "/v2/feeds/" + feedId + ".json";
 		String url = host + operation;
 		try {
@@ -102,7 +102,7 @@ public class DataIn {
 		HttpClient httpclient = new DefaultHttpClient();
 		HttpGet httpget = new HttpGet(url);
 		httpget.setHeader("Version", "HTTP/1.1");
-		httpget.setHeader("Host", "api.cosm.com");
+		httpget.setHeader("Host", "api.xively.com");
 		httpget.setHeader("X-ApiKey", apiKey);
 		if (verbose) {
 			System.out.println("-------- open cosmic connection --------");
@@ -124,7 +124,7 @@ public class DataIn {
 				System.out.println("\nCosm says bad request. status code: \n");
 				System.out.println(statusLine + "\n");
 				System.out
-						.println("check the HTTP status codes at http://cosm.com/docs/v2/\n");
+						.println("check the HTTP status codes at http://xively.com/docs/v2/\n");
 				cosmResponse = EntityUtils.toString(entity) + "\n";
 				Header[] respHeader;
 				respHeader = response.getAllHeaders();

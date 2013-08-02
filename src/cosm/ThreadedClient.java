@@ -31,10 +31,10 @@ public class ThreadedClient {
         try {
             // create an array of URIs to perform GETs on
             String[] urisToGet = {
-                "http://api.cosm.com/v2/feeds/37080.json",
-                "http://api.cosm.com/v2/feeds/58023.json",
-                "http://api.cosm.com/v2/feeds/47043.json",
-                "http://api.cosm.com/v2/feeds/256.json"
+                "http://api.xively.com/v2/feeds/37080.json",
+                "http://api.xively.com/v2/feeds/58023.json",
+                "http://api.xively.com/v2/feeds/47043.json",
+                "http://api.xively.com/v2/feeds/256.json"
             };
 
             // create a thread for each URI
@@ -42,7 +42,7 @@ public class ThreadedClient {
             for (int i = 0; i < threads.length; i++) {
                 HttpGet httpget = new HttpGet(urisToGet[i]);
         		httpget.setHeader("Version", "HTTP/1.1");
-        		httpget.setHeader("Host", "api.cosm.com");
+        		httpget.setHeader("Host", "api.xively.com");
         		httpget.setHeader("X-ApiKey", apiKey);
                 threads[i] = new GetThread(httpclient, httpget, i + 1);
             }

@@ -26,7 +26,7 @@ public class DataOut {
 	String feedId;
 	boolean verbose = false;
 	String data;
-	String host = "http://api.cosm.com/v2/feeds/";
+	String host = "http://api.xively.com/v2/feeds/";
 	JSONObject dataToSend;
 
 	// testing with this:
@@ -37,7 +37,7 @@ public class DataOut {
 		apiKey = key;
 		feedId = id;
 		myParent = theParent;
-		System.out.println("##library.name## ##library.prettyVersion## http://cosm.com");
+		System.out.println("##library.name## ##library.prettyVersion## http://xively.com");
 		System.out.println("##author## 2012");
 		System.out.println("---------------------------------");
 	}
@@ -62,7 +62,7 @@ public class DataOut {
 		httpput.setHeader("X-ApiKey", apiKey);
 		httpput.setHeader("Accepts", "application/json");
 		httpput.setHeader("Content-Type", "application/json");
-		httpput.setHeader("Host", "api.cosm.com");
+		httpput.setHeader("Host", "api.xively.com");
 		httpput.setHeader("Version", "HTTP/1.1");
 		httpput.setEntity(myData);
 
@@ -87,7 +87,7 @@ public class DataOut {
 				System.out.println("\nCosm says bad request. status code: \n");
 				System.out.println(statusLine);
 				System.out
-						.println("check the HTTP status codes at http://cosm.com/docs/v2/\n");
+						.println("check the HTTP status codes at http://xively.com/docs/v2/\n");
 				cosmResponse = EntityUtils.toString(entity) + "\n\n";
 				Header[] respHeader;
 				respHeader = response.getAllHeaders();
